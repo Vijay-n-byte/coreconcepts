@@ -13,5 +13,8 @@ export class HomeComponent {
   open1(){
     this.r.navigate(['lifecyclehookseg']);
   }
+  open2(){
+    this.r.navigate(['team']);
+  }
 
 }

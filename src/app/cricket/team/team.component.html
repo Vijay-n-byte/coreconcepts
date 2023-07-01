@@ -1,0 +1,82 @@
+<div class="container">
+    <div class="firsthalf">
+        <p>teams</p>
+        <button (click)="addteam()">add team</button>
+        <table border="2px">
+            <tr>
+                <th>team number</th>
+                <th>options</th>
+                <th>crud</th>
+                <th>batsman</th>
+                <th>bowler</th>
+                <th>wicketkeeper</th>
+            </tr>
+            <tr *ngFor="let ee of e">
+                <th>{{ee.teamno}}</th>
+                <th>
+                    <button (click)="deleteteam(ee.teamno)">delete</button>
+                    <button (click)="addbatsman(ee.teamno)">add batsman</button>
+                </th>
+                <th>
+                    <div *ngIf="ee.teamno===swi">
+                        <input #ji type="number" name="id">
+                        <button (click)="addbatsman1(ji.value,ee.teamno)">add batsman</button>
+                    </div>
+                </th>
+                <th>
+                    
+                    
+                    <ol *ngFor="let r of ee.batsman">
+                        <li>{{r.name}}</li>
+                        <button>update batsman</button>
+                        <button>delete batsman</button>
+                    </ol>
+                </th>
+                <th>
+                    <ol *ngFor="let r of ee.bowler">
+                        <li>{{r.name}}</li>
+                        <button>update batsman</button>
+                        <button>delete batsman</button>
+                    </ol>
+                </th>
+                <th>
+
+                </th>
+            </tr>
+        </table>
+
+
+    <!-- <ul *ngFor="let ee of e">
+        <button (click)="deleteteam(ee.teamno)">delete</button>
+        <li>{{ee.teamno}}</li>
+        batsman:
+        <button (click)="addbatsman(ee.teamno)">add batsman</button>
+        <div *ngIf="ee.teamno===swi">
+            <input #ji type="number" name="id">
+            <button (click)="addbatsman1(ji.value,ee.teamno)">add batsman</button>
+        </div>
+        <ul *ngFor="let r of ee.batsman">
+            <li>{{r.name}}</li>
+            <button>update batsman</button>
+            <button>delete batsman</button>
+        </ul>
+         
+        bowler:
+        <li *ngFor="let r of ee.bowler">{{r.name}}</li>
+        wicketkeeper:
+        
+    </ul>
+    <button (click)="addteam()">add team</button> -->
+    </div>
+    <hr>
+
+    <div class="secondhalf">
+        <app-player></app-player>
+    
+    </div>
+
+</div>
+
+
+
+

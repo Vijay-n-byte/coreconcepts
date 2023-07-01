@@ -15,7 +15,7 @@ import { Section3Component } from './section3/section3.component';
   ],
   imports: [
     CommonModule,
-    AppRoutingModule
+    // AppRoutingModule
     
   ],
  

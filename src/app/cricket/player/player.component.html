@@ -1,0 +1,45 @@
+<p>Available players</p>
+
+<ul *ngFor="let ee of e">
+    <li>
+        {{ee.id}}
+    </li>
+    <li>
+        {{ee.name}}
+    </li>
+    <li>
+        {{ee.role}}
+    </li>
+    <li>
+        {{ee.experience}}
+    </li>
+    <li>
+        <button (click)="deleteplayer(ee.id)">delete</button>
+    </li>
+    <li>
+        <button (click)="openupdate(ee)">update</button>
+    </li>
+    
+</ul>
+<p>add players</p>
+<form #sample="ngForm" (ngSubmit)="addplayer(sample)">
+    id: <input type="text" ngModel name="id"><br>
+   name: <input type="text" ngModel name="name"><br>
+    role:<input type="text" ngModel name="role"><br>
+    experience:<input type="text" ngModel name="experience"><br>
+    <input type="submit" name="submit" value="add">
+</form>
+<br>
+<br>
+<br>
+
+<div *ngIf="openupdateform">
+    <p>update form</p>
+    <form [formGroup]="updatefo" (ngSubmit)="updateplayer(updatefo)">
+        id: <input type="text" formControlName="id" readonly><br>
+       name: <input type="text"  formControlName="name"><br>
+        role:<input type="text"  formControlName="role"><br> 
+        experience:<input type="text" formControlName="experience"><br>
+        <input type="submit" name="submit" value="update">
+    </form>
+</div>
